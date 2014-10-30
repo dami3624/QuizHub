@@ -1,0 +1,8 @@
+<div class="login">
+<%= form_tag sesions_path do %>
+    <%= text_field_tag :email, params[:email], placeholder: 'email' %>
+    <%= password_field_tag :password,params[:password], placeholder: 'password'%>
+	<%= submit_tag(:login) %>
+<% end %>
+</div>
+<div class="shadow"></div>
