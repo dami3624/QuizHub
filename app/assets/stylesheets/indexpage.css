@@ -1,0 +1,20 @@
+header{
+	position: relative;
+	width: 100%;
+	height: 95px;
+	/*background-color: #16a085;*/
+}
+
+#hd1{
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 5px;
+	background-image: 
+    repeating-linear-gradient(
+      90deg,
+      #2ecc71, #2ecc71 20%, #f1c40f 20%, #f1c40f 40%, #f39c12 40%, #f39c12 60%, #e67e22 60%, #e67e22 80%, #27ae60 80%, #27ae60 100% /* determines size*/);
+}
+#errorExplanation p { color: #333333; margin: 0; padding: 3px 0.5em; }
+#errorExplanation ul { margin-top: 0; }
+#errorExplanation ul li { list-style: square; }

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<%= stylesheet_link_tag('application', :media => 'all')%>
+  	<title>.:The Quiz Hub:.</title>
+</head>
+<body>
+<div id = "hd1"></div>
+  <% flash.each do |name, msg| %>
+    <%= content_tag :div, msg, :id => "flash#{name}" %>
+  <% end %>
+
+<%= yield %>
+
+</body>
+</html>
