@@ -4,7 +4,6 @@ header{
 	height: 95px;
 	/*background-color: #16a085;*/
 }
-
 #logIn{
 	text-decoration: none;
 	font-size: 30px;	 
@@ -19,7 +18,6 @@ header{
 	border-radius: 2px;
 }
 
-
 #hd1{
 	position: absolute;
 	top: 0;
@@ -30,7 +28,6 @@ header{
       90deg,
       #2ecc71, #2ecc71 20%, #f1c40f 20%, #f1c40f 40%, #f39c12 40%, #f39c12 60%, #e67e22 60%, #e67e22 80%, #27ae60 80%, #27ae60 100% /* determines size*/);
 }
-
 #title{
 	font-size: 50px;
 	text-align: center;
@@ -165,7 +162,6 @@ header{
 	width: 100%;
 	height: 20px;
 }
-
 
 #errorExplanation p { color: #333333; margin: 0; padding: 3px 0.5em; }
 #errorExplanation ul { margin-top: 0; }
