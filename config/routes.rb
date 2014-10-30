@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
+  get "users/home"
   get 'quizzes/new'
+  get 'sesions/new'
+  
 
   get "log_in" => "sesions#new", :as => "log_in"
 
@@ -8,6 +11,7 @@ Rails.application.routes.draw do
   root "users#new"
   resources :users
   resources :sesions
+  resources :quizzes
 #match ':controller(/:action(/:id))',:via =>[:get, :post]
 #root :to => "users#new"
 

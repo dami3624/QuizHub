@@ -18,3 +18,19 @@ header{
 #errorExplanation p { color: #333333; margin: 0; padding: 3px 0.5em; }
 #errorExplanation ul { margin-top: 0; }
 #errorExplanation ul li { list-style: square; }
+
+
+#crt{
+	margin-top: 40px;
+	margin-left: 80%;
+}
+
+#lg{
+	margin-top: -34px;
+	margin-left: 74%;
+}
+
+#logo{
+	font-size: 30px;
+	margin-left: 40%
+}
