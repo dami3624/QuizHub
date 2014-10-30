@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+
+
 	layout 'temp'
   def new
   	@user = User.new
@@ -14,6 +16,7 @@ class UsersController < ApplicationController
   end
 
   def home
+  	@quizzes = Quiz.find(params(session[:user_id]))
   	render "home"
   end
 

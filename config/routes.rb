@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  get "users/home"
+  get "quizzes/home"
   get 'quizzes/new'
   get 'sesions/new'
+  get 'sesions/logout'
   
 
   get "log_in" => "sesions#new", :as => "log_in"

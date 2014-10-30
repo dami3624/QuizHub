@@ -17,6 +17,8 @@
   
     <%= f.text_field :title, placeholder: 'Title' %>
     <%= f.select(:category, {"Sport" => "Sport", "Romance" => "Romance", "Education" => "Education", "Religion" => "Religion"})%>
+    <%= f.hidden_field :user_id, value: session[:user_id] %>
+    
   </p>
   <p class="button"><%= f.submit %></p>
 <% end %>
