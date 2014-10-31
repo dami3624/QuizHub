@@ -2,8 +2,9 @@
 <p>Find me in app/views/first_page/first_page.html.erb</p>!-->
 <!-- <div id = "login"><a href="#" class="btn btn-danger">Log-in</a></div>  -->
 <% @quizzes = Quiz.all %>
-<%= link_to('Log-in',{controller: 'sesions', action: 'new', id: "logIn"} )%>
-<p><%= link_to('Sign up',{controller: 'users', action: 'new', id: "SignUp"} )%></p>
+<%= link_to('Log-in',{controller: 'sesions', action: 'new'}, id: "homepage" )%>
+<div id= "pipe">|</div>
+<%= link_to('Sign up',{controller: 'users', action: 'new'}, id: "homepage" )%><br />
 
 <div id ="blue"></div>
 
@@ -24,7 +25,11 @@
     <tr>
       <td><%= p.title %></td>
       <td><%= p.category %></td>
+
       <td><%=link_to('Take Test',{controller: 'questions', action: 'test', :id => p.id} ) %></td>
+
+      <td></td>
+
     </tr>
     <% end %>
         </table>

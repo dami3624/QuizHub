@@ -13,23 +13,26 @@
 </div>
 
 
-<div id="tbl">
-  <table class="table table-striped">
-    <tr class="header">
-      <th>Quiz Title</th>
-      <th>Category</th>
-      <th>Created at</th>
-    </tr>
-  	<% @quizzes.each do |p| %>
+
+ </div>  
+
+ <div class="testTable">
+    <div class="CSSTableGenerator" >
+        <table >
+            <tr>
+                <td>Quiz Title</td><td>Category</td><td>Created at</td><td>Actions</td>
+            </tr>
+            <% @quizzes.each do |p| %>
     <tr>
       <td><%= p.title %></td>
       <td><%= p.category %></td>
       <td><%= p.created_at %></td>
-      <td class="actions">
+      <td>
         <%= link_to("Edit", p, :action => 'edit', :class => 'action edit') %>
         <%= link_to("Delete", p, :action => 'delete', :class => 'action delete') %>
       </td>
     </tr>
     <% end %>
-   </table>
-</div>  
+        </table>
+    </div>
+</div>

@@ -38,7 +38,7 @@ header{
 }
 
 #footer{
-	position: absolute;
+	position: fixed;
 	width: 100%;
 	bottom: 0;
 	text-align: center;
@@ -58,7 +58,7 @@ header{
 #pipe{
 	font-size: 20px;
 	display: inline;
-	margin-left: 4%;
+	margin-left: 2%;
 }
 .testTable{
 	margin-top: 3%;
@@ -204,4 +204,16 @@ header{
 
 #ball {
 	margin: 30px;
+}
+#homepage{
+	font-size: 20px;
+	text-decoration: none;
+	margin-left: 2%;
+}
+#quiz{
+	text-align: center;
+}
+#btnmy{
+	margin-left: 50%;
+	margin-top: 50px;
 }

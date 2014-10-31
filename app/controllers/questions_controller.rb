@@ -2,6 +2,7 @@ class QuestionsController < ApplicationController
   
   layout 'temp'
   #@id => params[:qid]
+  @score = 0
   def index
   	@question = Question.new
   end
@@ -17,6 +18,15 @@ class QuestionsController < ApplicationController
   		render "new"
   	end
   end
+  def score
+  	
+  	if params [:op1] == '1'
+  		@score = 1
+  	else
+  		@score  = 0
+  	end
+
+  end
 
     private
 
@@ -24,4 +34,5 @@ class QuestionsController < ApplicationController
   	#:quiz_id => @id
   	params.require(:question).permit(:quiz_id, :quest, :op_1, :op_2, :op_3, :answer)
   end
+
 end

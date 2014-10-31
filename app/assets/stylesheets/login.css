@@ -38,12 +38,8 @@ input[type="password"], input[type="text"]{
   transition: box-shadow 0.3s;
   width: 240px;
 }
-select {
-
-  margin-right: 3%;
-
-  margin-right: 30px;
-
+#select {
+  margin-left: 10%;
 }
 
 input[type="password"]:focus, input[type="text"]:focus {

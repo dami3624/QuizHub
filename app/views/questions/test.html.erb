@@ -9,18 +9,22 @@
     <div class="CSSTableGenerator" >
         <table>
             <tr>
-                <td>Question</td><td>Option1</td><td>Option2</td><td>Option3</td><td>Answer</td>
+                <td>Question</td><td>Option1</td><td>Option2</td><td>Option3</td><td>Option4</td>
             </tr>
             <% @question.each do |p| %>
     <tr>
       <td><%= p.quest %></td>
-      <td><%= radio_button_tag 'theme', 0%><%= p.op_1 %></td>
-      <td><%= radio_button_tag 'theme', 0%><%= p.op_2 %></td>
-      <td><%= radio_button_tag 'theme', 0%><%= p.op_3 %></td>
-      <td><%= radio_button_tag 'theme', 1%><%= p.answer %></td>
+      <td><%= radio_button_tag 'op1', 0%><%= p.op_1 %></td>
+      <td><%= radio_button_tag 'op1', 0%><%= p.op_2 %></td>
+      <td><%= radio_button_tag 'op1', 0%><%= p.op_3 %></td>
+      <td><%= radio_button_tag 'op1', 1%><%= p.answer %></td>
     </tr>
+
     <% end %>
+
         </table>
     </div>
 </div>
+<%= text_field_tag :score, params[@score]%>
+<div id="btnmy"><button type="submit" class="btn btn-primary">Submit</button></div>
 

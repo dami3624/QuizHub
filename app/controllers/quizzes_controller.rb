@@ -25,6 +25,13 @@ class QuizzesController < ApplicationController
   end
 
   def home
+    
+  end
+
+ 
+  def destroy
+    @quiz = Quiz.find(params[:id]).destroy
+    redirect_to(:controller => :quizzes, :action => :home)
   end
 
   def quest
