@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+
+
 	layout 'temp'
   def new
   	@user = User.new
@@ -13,9 +15,7 @@ class UsersController < ApplicationController
   	end
   end
 
-  def home
-  	render "home"
-  end
+
 
   private
 

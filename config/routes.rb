@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
-  get "users/home"
+  get 'questions/index'
+
+  get "quizzes/home" => 'quizzes#home'
   get 'quizzes/new'
   get 'sesions/new'
+  get 'sesions/logout'
   
 
   get "log_in" => "sesions#new", :as => "log_in"
@@ -9,7 +12,7 @@ Rails.application.routes.draw do
   #get 'users/new'
   get "sign_up" => "users#new", :as => "sign_up"
 
-  root "first_page#first_page"
+  root "quizzes#index"
   #root "users#new"
 
 

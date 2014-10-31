@@ -1,3 +1,8 @@
+<%= link_to('Back to home',{controller: 'quizzes', action: 'index'}, id: "homepage" )%>
+<div id= "pipe">|</div>
+<%= link_to('Sign up',{controller: 'users', action: 'new'}, id: "homepage" )%>
+
+
 <div class="login">
 <%= form_tag sesions_path do %>
     <%= text_field_tag :email, params[:email], placeholder: 'email' %>
