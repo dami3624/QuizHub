@@ -1,0 +1,35 @@
+<!-- <div id = "logo">The Quiz Hub</div> -->
+<!-- <div id = "crt"><a href="#" class="btn btn-large btn-success">Create  Quiz</a></div> -->
+<% @quizzes = Quiz.where(user_id: session[:user_id]) %>
+<%= link_to('Create Quiz',{controller: 'quizzes', action: 'new'}, class: "btn btn-large btn-success", id: "crt")%>
+
+<%= link_to('Logout', {controller: 'sesions', action: 'logout'}, class: "btn btn-danger", id: "lg")%>
+
+<!-- <div id = "lg"><a href="<" class="btn btn-danger">Logout</a></div>  -->
+<div id = "logo">The QuizHub</div>
+<div id = "head">
+	<p><%= "Welcome User #{session[:user_id]} "%></p>
+	<p>Your quizzes include the following:</p>
+</div>
+
+
+<div id="tbl">
+  <table class="table table-striped">
+    <tr class="header">
+      <th>Quiz Title</th>
+      <th>Category</th>
+      <th>Created at</th>
+    </tr>
+  	<% @quizzes.each do |p| %>
+    <tr>
+      <td><%= p.title %></td>
+      <td><%= p.category %></td>
+      <td><%= p.created_at %></td>
+      <td class="actions">
+        <%= link_to("Edit", p, :action => 'edit', :class => 'action edit') %>
+        <%= link_to("Delete", p, :action => 'delete', :class => 'action delete') %>
+      </td>
+    </tr>
+    <% end %>
+   </table>
+</div>  

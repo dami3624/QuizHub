@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  get "quizzes/home"
+  get 'questions/index'
+
+  get "quizzes/home" => 'quizzes#home'
   get 'quizzes/new'
   get 'sesions/new'
   get 'sesions/logout'
@@ -9,7 +11,11 @@ Rails.application.routes.draw do
 
   #get 'users/new'
   get "sign_up" => "users#new", :as => "sign_up"
-  root "users#new"
+
+  root "quizzes#index"
+  #root "users#new"
+
+
   resources :users
   resources :sesions
   resources :quizzes

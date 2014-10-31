@@ -1,31 +1,30 @@
 class QuizzesController < ApplicationController
-	#belongs_to :user
-	#has_maay :questions
 
-  layout false
+  layout 'temp'
+  before_action :find_user
+	#@dami = sessions[:user_id]
+  def index
+  end
   
   def new
   	@quiz = Quiz.new
   end
 	
   def show
-  		#@quizs = Quiz.where(user: sessions[:user_id])
+  		#@dami = sessions[:user_id]
+  		#@quizs = Quiz.where(user_id: @dami)
+  		@quiz = @user.quizzes
   end
 
 
   def create
   	  	@quiz = Quiz.new(quiz_params)
   	if @quiz.save
-  		redirect_to :action => ''
-  	else
-  		render "new"
+  		redirect_to url_for(:controller => :questions, :action => :index, :qid => @quiz.id)
   	end
   end
 
-   def home
-   	#@to_use = sessions[:user_id]
-
-  	render "home"
+  def home
   end
 
   def quest
@@ -35,6 +34,14 @@ class QuizzesController < ApplicationController
     private
 
   def quiz_params
+
   	params.require(:quiz).permit(:user_id, :title, :category)
+  end
+
+  def find_user
+  
+  	if session[:user_id]
+  		@user = User.find session[:user_id]
+  	end
   end
 end

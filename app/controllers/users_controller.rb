@@ -15,10 +15,7 @@ class UsersController < ApplicationController
   	end
   end
 
-  def home
-  	@quizzes = Quiz.find(params(session[:user_id]))
-  	render "home"
-  end
+
 
   private
 

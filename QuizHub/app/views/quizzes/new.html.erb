@@ -1,0 +1,25 @@
+<!-- <h1>Quizzes#new</h1>
+<p>Find me in app/views/quizzes/new.html.erb</p>
+ -->
+<div class="login">
+ <%= form_for @quiz do |f| %>
+  <% if @quiz.errors.any? %>
+    <div class="error_messages">
+      <h2>Form is invalid</h2>
+      <ul>
+        <% for message in @quiz.errors.full_messages %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <p>
+  
+    <%= f.text_field :title, placeholder: 'Title' %>
+    <%= f.select(:category, {"Sport" => "Sport", "Romance" => "Romance", "Education" => "Education", "Religion" => "Religion"})%>
+    <%= f.hidden_field :user_id, value: session[:user_id] %>
+  </p>
+  <p class="button"><%= f.submit %></p>
+<% end %>
+</div>
+<div class="shadow"></div>
