@@ -1,0 +1,26 @@
+<h3>Take Your Test</h3>
+
+<% @question = Question.where(quiz_id: params[:id]) %>
+
+
+    
+
+    <div class="testTable">
+    <div class="CSSTableGenerator" >
+        <table>
+            <tr>
+                <td>Question</td><td>Option1</td><td>Option2</td><td>Option3</td><td>Answer</td>
+            </tr>
+            <% @question.each do |p| %>
+    <tr>
+      <td><%= p.quest %></td>
+      <td><%= radio_button_tag 'theme', 0%><%= p.op_1 %></td>
+      <td><%= radio_button_tag 'theme', 0%><%= p.op_2 %></td>
+      <td><%= radio_button_tag 'theme', 0%><%= p.op_3 %></td>
+      <td><%= radio_button_tag 'theme', 1%><%= p.answer %></td>
+    </tr>
+    <% end %>
+        </table>
+    </div>
+</div>
+

@@ -1,15 +1,15 @@
 <div id = "ball">
-<h4>You Quiz hs being created, Pls fill the form,<br/>  to add questions to the quiz.</h4>
+<h4>Your Quiz has being created, Pls fill the form,<br/>  to add questions to the quiz.</h4>
 
+ <p>Click <%= link_to('here',{controller: 'questions', action: 'index'})%> to add another question, or <%= link_to('here',{controller: 'quizzes', action: 'home'})%> to go back</p>
 
-    
-
-            <div class="form-group">
-            <label for="comments">Questions</label>
+   <%= form_for(@question) do |f| %>
+           <div class="form-group">
+           <label for="comments">Questions</label>
     		<div class="row">
-       			<div class="col-xs-3">
-            		<textarea name="body" rows="5" size="4" placeholder="Comments..."></textarea>
-				</div>
+    			<div class="col-xs-3">
+    			 <%= f.text_area :quest, placeholder: 'Question' %>
+    			</div>
 			</div>
         </div>
 
@@ -18,7 +18,7 @@
 		<label for="inputEmail">Option1</label>
         <div class="row">
            <div class="col-xs-3">
-            	<input type="test" class="form-control" id="inputEmail" placeholder="Name" name="author">
+            	 <%= f.text_field :op_1, placeholder: 'Option1' %>
             </div>
         </div>
 	</div>
@@ -27,7 +27,7 @@
 			<label for="inputEmail">Option2</label>
         <div class="row">
            <div class="col-xs-3">
-            	<input type="test" class="form-control" id="inputEmail" placeholder="Name" name="author">
+            	<%= f.text_field :op_2, placeholder: 'Option2' %>
             </div>
         </div>
 	</div>
@@ -37,7 +37,7 @@
 		<label for="inputEmail">Option3</label>
         <div class="row">
            <div class="col-xs-3">
-            	<input type="test" class="form-control" id="inputEmail" placeholder="Name" name="author">
+            	<%= f.text_field :op_3, placeholder: 'Option3' %>
             </div>
         </div>
 	</div>
@@ -47,16 +47,17 @@
 			<label for="inputEmail">Answer</label>
         <div class="row">
            <div class="col-xs-3">
-            	<input type="test" class="form-control" id="inputEmail" placeholder="Name" name="author">
+           <%= f.text_field :answer, placeholder: 'Answer' %>
             </div>
         </div>
 	</div>
 
-
+	<%= f.hidden_field :quiz_id, value: params[:qid] %>
 
 
         <button type="submit" class="btn btn-primary">Submit</button>
 
-        <p>Click <%= link_to('here',{controller: 'questions', action: 'index'})%> to add another question, or <%= link_to('here',{controller: 'quizzes', action: 'home'})%> to go back</p>
+       
+        <%end%>
 
 </div>

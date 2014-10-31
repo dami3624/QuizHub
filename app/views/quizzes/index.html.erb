@@ -16,7 +16,7 @@
 </table> -->
 <div class="testTable">
     <div class="CSSTableGenerator" >
-        <table >
+        <table>
             <tr>
                 <td>Quiz Title</td><td>Category</td><td>Take test</td>
             </tr>
@@ -24,11 +24,13 @@
     <tr>
       <td><%= p.title %></td>
       <td><%= p.category %></td>
-      <td><%= %></td>
+      <td><%=link_to('Take Test',{controller: 'questions', action: 'test', :id => p.id} ) %></td>
     </tr>
     <% end %>
         </table>
     </div>
 </div>
-                     
+        
+
+             
                    

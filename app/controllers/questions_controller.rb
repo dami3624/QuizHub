@@ -1,13 +1,18 @@
 class QuestionsController < ApplicationController
   
   layout 'temp'
+  #@id => params[:qid]
   def index
+  	@question = Question.new
+  end
+
+  def test
   end
 
   def create
   	 @question = Question.new(questions_params)
-  	if @user.save
-  		redirect_to url_for(:controller => :sesions, :action => :new)
+  	if @question.save
+  		redirect_to url_for(:action => :index, :id => params[:id])
   	else
   		render "new"
   	end
@@ -16,6 +21,7 @@ class QuestionsController < ApplicationController
     private
 
   def questions_params
-  	params.require(:user).permit(:qid, :quest, :op_1, :op_2, :op_3, :answer)
+  	#:quiz_id => @id
+  	params.require(:question).permit(:quiz_id, :quest, :op_1, :op_2, :op_3, :answer)
   end
 end

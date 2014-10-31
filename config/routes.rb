@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
+  #match ':controller(/:action(/:id))',:via =>[:get, :post]
+  #get 'questions/index/:id', :to => 'questions#index'
+  
   get 'questions/index'
-
+  get 'questions/test'
   get "quizzes/home" => 'quizzes#home'
   get 'quizzes/new'
   get 'sesions/new'
@@ -15,7 +18,7 @@ Rails.application.routes.draw do
   root "quizzes#index"
   #root "users#new"
 
-
+resources :questions
   resources :users
   resources :sesions
   resources :quizzes
